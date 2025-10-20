@@ -12,8 +12,6 @@ def define_posicoes(linha, coluna, orientacao, tamanho):
 
     return posicoes
 
-print('teste')
-
 def preenche_frota(frota, nome_navio, linha, coluna, orientacao, tamanho):
     
     posicoes = define_posicoes(linha, coluna, orientacao, tamanho)
