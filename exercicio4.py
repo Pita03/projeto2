@@ -9,11 +9,12 @@ def posiciona_frota(navio_dicio):
         tabuleiro_f.append(linha)
     
 
-    for posicoes in navio_dicio.values():
-        for coordenadas in posicoes:
-            linha=coordenadas[0]
-            coluna=coordenadas[1]
-            tabuleiro_f[linha][coluna]=1
+    for conjunto in navio_dicio.values():
+        for posicoes in conjunto:
+            for coordenadas in posicoes:
+                linha=coordenadas[0]
+                coluna=coordenadas[1]
+                tabuleiro_f[linha][coluna]=1
     
     return tabuleiro_f
 
