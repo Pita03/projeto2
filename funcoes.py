@@ -74,3 +74,20 @@ def afundados(frota, tabuleiro):
                 cont+=1
     
     return cont
+
+def posicao_valida(frota, linha, coluna, orientacao, tamanho):
+    posicoes_novo_navio = define_posicoes(linha, coluna, orientacao, tamanho)
+
+    for pos in posicoes_novo_navio:
+        l, c = pos
+        if l < 0 or l > 9 or c < 0 or c > 9:
+            return False  # Sai do tabuleiro
+
+    # 2. Verifica se há colisão com navios já existentes
+    for conjunto_navios in frota.values():
+        for navio in conjunto_navios:
+            for pos_existente in navio:
+                if pos_existente in posicoes_novo_navio:
+                    return False  # Colisão detectada
+
+    return True
